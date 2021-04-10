@@ -40,7 +40,7 @@ public class InterfazApp extends JFrame {
       
         ctrl.conectar(pnlConversacion, pnlEnviar);
         setResizable(false);
-        setSize(320, 520);
+        setSize(335, 520);
        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Util.centrarVentana(this);

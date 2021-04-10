@@ -1,0 +1,2 @@
+interfaz.ActionClick
+interfaz.PanelEnviar

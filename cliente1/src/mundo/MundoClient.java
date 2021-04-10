@@ -24,14 +24,7 @@ public class MundoClient implements Runnable {
     private ControladorClient ctrl;
     private Thread thread;
 
-    /*private final char[] EN = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o',
-        'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4',
-        '5', '6', '7', '9', '-'};
-
-    private final char[] DES = {'d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o',
-        'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1',
-        '2', '3', '4', '5', '6', '7', '9', '-', 'a', 'b', 'c',};
-     */
+   
     public MundoClient(ControladorClient ctrl) {
         this.ctrl = ctrl;
     }
@@ -50,7 +43,7 @@ public class MundoClient implements Runnable {
                 inObjectBuffer = new DataInputStream(socket.getInputStream());
                 String msgr = inObjectBuffer.readUTF();
                 //System.out.println(msgr);
-                ctrl.recibirMensaje(msgr);
+                ctrl.recibirMensaje(desencriptar(msgr));
                 //desencriptar(msgr);
                 socket.close();
 
@@ -69,7 +62,7 @@ public class MundoClient implements Runnable {
 
             try (Socket server = new Socket(ip, portSend)) {
                 DataOutputStream outBuffer = new DataOutputStream(server.getOutputStream());
-                outBuffer.writeUTF(mensaje);
+                outBuffer.writeUTF(encriptar(mensaje));
             }
         } catch (UnknownHostException e) {
             JOptionPane.showMessageDialog(null, "socket() : UnknownHostException: " + e.getMessage());
@@ -83,43 +76,19 @@ public class MundoClient implements Runnable {
         thread.start();
     }
 
-    /*public void encriptar(String msg) {
+    public String encriptar(String msg) {
         String encriptado = "";
-        int cont = 0;
-        int i = 0;
-        char ch;
-        while (cont < msg.length()) {
-            if (Character.isUpperCase(msg.charAt(cont))) {
-                ch = Character.toLowerCase(msg.charAt(cont));
-                if (ch == EN[i]) {
-                    encriptado += DES[i];
-                    cont++;
-                    i = -1;
-                }
-                i++;
-            }
-
+        for(char ch:msg.toCharArray()){
+            encriptado += (char)(ch+3);
         }
-        socket(encriptado);
+        return encriptado;
     }
 
     public String desencriptar(String msg) {
         String desencriptado = "";
-        int cont = 0;
-        int i = 0;
-        char ch;
-        while (cont < msg.length()) {
-            if (Character.isUpperCase(msg.charAt(cont))) {
-                ch = Character.toLowerCase(msg.charAt(cont));
-                if (ch == DES[i]) {
-                    desencriptado += EN[i];
-                    cont++;
-                    i = -1;
-                }
-                i++;
-            }
-
+        for(char ch:msg.toCharArray()){
+            desencriptado += (char)(ch-3);
         }
         return desencriptado;
-    }*/
+    }
 }

@@ -31,6 +31,8 @@ public class PanelConversacion extends JPanel {
         textfield.setEnabled(false);
         textfield.setBounds(1, 20, 240, 260);
         textfield.setForeground(Color.RED);
+        textfield.setLineWrap(true);
+        textfield.setWrapStyleWord(true);
 
         //Font
         Font font = new Font("Serif", Font.PLAIN, 15);
