@@ -30,7 +30,7 @@ public class InterfazApp extends JFrame {
         pnlConversacion = new PanelConversacion(pnlEnviar, ctrl);
         pnlConversacion.setBounds(20, 20, 280, 360);
         getContentPane().add(pnlConversacion);
-        getContentPane().add(new JLabel());
+        //getContentPane().add(new JLabel());
      
         pnlEnviar = new PanelEnviar(pnlConversacion,ctrl);
         pnlEnviar.setBounds(25,400,275, 90);
@@ -44,7 +44,8 @@ public class InterfazApp extends JFrame {
        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Util.centrarVentana(this);
-
+        
+       
     }
 
     public void toReceive(String msgReceive) {

@@ -28,7 +28,7 @@ public class PanelConversacion extends JPanel {
         setLayout(new FlowLayout(FlowLayout.LEFT));
 
         textfield = new JTextArea();;
-        textfield.setEnabled(false);
+        textfield.setEditable(false);
         textfield.setBounds(1, 20, 240, 260);
         textfield.setForeground(Color.RED);
         textfield.setLineWrap(true);
@@ -37,7 +37,7 @@ public class PanelConversacion extends JPanel {
         //Font
         Font font = new Font("Serif", Font.PLAIN, 15);
         textfield.setFont(font);
-        textfield.setForeground(Color.yellow);
+        textfield.setForeground(Color.black);
         //border
         border = BorderFactory.createLineBorder(Color.BLACK, 1);
         setBorder(border);
