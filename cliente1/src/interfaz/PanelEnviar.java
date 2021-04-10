@@ -27,7 +27,7 @@ public class PanelEnviar extends JPanel {
 
     protected JTextArea textField;
     private JButton button;
-    private Icon icon = new ImageIcon("C:/Users/admin/OneDrive/Documents/NetBeansProjects/cliente1/img/send.png");
+    private Icon icon = new ImageIcon("img/send.png");
     private PanelConversacion pnlConversacion;
     private ControladorClient ctrl;
 
