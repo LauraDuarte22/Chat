@@ -43,9 +43,7 @@ public class MundoServer implements Runnable {
         Socket socket;
         DataInputStream inObjectBuffer;
         ServerSocket server;
-
         try {
-
             server = new ServerSocket(PORTLISTEN);
             while (true) {
                 socket = server.accept();
