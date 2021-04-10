@@ -15,6 +15,7 @@ import util.Util;
  * @author admin
  */
 
+// INTERFAZ SERVIDOR
 public class InterfazApp extends JFrame {
 
     private ControladorServer ctrl;
@@ -22,7 +23,7 @@ public class InterfazApp extends JFrame {
 
     public InterfazApp(ControladorServer ctrl) {
         this.ctrl = ctrl;
-        ctrl.conectar(pnlConversacion);
+        
         setTitle("Server");
         getContentPane().setLayout(null);
         
@@ -31,7 +32,7 @@ public class InterfazApp extends JFrame {
         getContentPane().add(pnlConversacion);
         getContentPane().add(new JLabel());
         
-        
+        ctrl.conectar(pnlConversacion);
         setResizable(false);
         setSize(320, 520);
        

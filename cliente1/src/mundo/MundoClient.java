@@ -24,14 +24,14 @@ public class MundoClient implements Runnable {
     private ControladorClient ctrl;
     private Thread thread;
 
-    private final char[] EN = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o',
+    /*private final char[] EN = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o',
         'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4',
         '5', '6', '7', '9', '-'};
 
     private final char[] DES = {'d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o',
         'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1',
         '2', '3', '4', '5', '6', '7', '9', '-', 'a', 'b', 'c',};
-
+     */
     public MundoClient(ControladorClient ctrl) {
         this.ctrl = ctrl;
     }
@@ -49,7 +49,8 @@ public class MundoClient implements Runnable {
                 socket = server.accept();
                 inObjectBuffer = new DataInputStream(socket.getInputStream());
                 String msgr = inObjectBuffer.readUTF();
-                desencriptar(msgr);
+                
+                //desencriptar(msgr);
                 socket.close();
 
             }
@@ -81,7 +82,7 @@ public class MundoClient implements Runnable {
         thread.start();
     }
 
-    public void encriptar(String msg) {
+    /*public void encriptar(String msg) {
         String encriptado = "";
         int cont = 0;
         int i = 0;
@@ -119,5 +120,5 @@ public class MundoClient implements Runnable {
 
         }
         return desencriptado;
-    }
+    }*/
 }

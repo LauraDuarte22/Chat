@@ -20,9 +20,9 @@ public class ControladorClient {
     private PanelEnviar pnlEnviar;
 
     public ControladorClient() {
-      //  this.pnlEnviar = pnlEnviar;
-     //   mundo = new MundoClient(this);
-       // mundo.init();
+        //  this.pnlEnviar = pnlEnviar;
+        mundo = new MundoClient(this);
+        mundo.init();
     }
 
     public void conectar(PanelConversacion pnlConversacion, PanelEnviar pnlEnviar) {
@@ -30,12 +30,15 @@ public class ControladorClient {
         this.pnlEnviar = pnlEnviar;
     }
 
-    public void encriptar(String msgReceive) {
+    public void enviarMensaje(String msg){
+        mundo.socket(msg);
+    }
+    /*public void encriptar(String msgReceive) {
         mundo.encriptar(msgReceive);
     }
 
     public void desencriptar(String msgReceive) {
         pnlConversacion.mostrarMensaje(mundo.desencriptar(msgReceive));
     }
-
+     */
 }

@@ -31,8 +31,9 @@ public class PanelEnviar extends JPanel {
     private PanelConversacion pnlConversacion;
     private ControladorClient ctrl;
 
-    public PanelEnviar(PanelConversacion pnlConversacion) {
+    public PanelEnviar(PanelConversacion pnlConversacion,ControladorClient ctrl) {
         this.pnlConversacion = pnlConversacion;
+        this.ctrl = ctrl;
         setLayout(new FlowLayout(FlowLayout.CENTER));
         textField = new JTextArea();
         textField.setLineWrap(true);
@@ -66,13 +67,16 @@ class ActionClick implements ActionListener {
         this.pnlEnviar = pnlEnviar;
         this.pnlConversacion = pnlConversacion;
         this.ctrl = ctrl;
+        
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        //ctrl.encriptar(pnlEnviar.textField.getText());
+       // ctrl.encriptar(pnlEnviar.textField.getText());
         pnlConversacion.mostrarMensaje(pnlEnviar.textField.getText());
+        ctrl.enviarMensaje(pnlEnviar.textField.getText());
         pnlEnviar.textField.setText("");
+        
 
     }
 

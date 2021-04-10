@@ -20,8 +20,8 @@ public class ControladorServer {
 
     public ControladorServer() {
         //  this.pnlEnviar = pnlEnviar;
-        //   mundo = new MundoClient(this);
-        // mundo.init();
+         mundo = new MundoServer(this);
+         mundo.init();
     }
 
     public void conectar(PanelConversacion pnlConversacion) {
@@ -29,7 +29,6 @@ public class ControladorServer {
     }
 
     public void toReceive(String msgReceive) {
-      
+        pnlConversacion.mostrarMensaje(msgReceive);
     }
-
 }

@@ -14,6 +14,8 @@ import util.Util;
  *
  * @author admin
  */
+
+// INTERFAZ CLIENTE
 public class InterfazApp extends JFrame {
 
     private ControladorClient ctrl;
@@ -22,7 +24,6 @@ public class InterfazApp extends JFrame {
 
     public InterfazApp(ControladorClient ctrl) {
         this.ctrl = ctrl;
-        ctrl.conectar(pnlConversacion, pnlEnviar);
         setTitle("Cliente");
         getContentPane().setLayout(null);
         
@@ -31,13 +32,13 @@ public class InterfazApp extends JFrame {
         getContentPane().add(pnlConversacion);
         getContentPane().add(new JLabel());
      
-        pnlEnviar = new PanelEnviar(pnlConversacion);
+        pnlEnviar = new PanelEnviar(pnlConversacion,ctrl);
         pnlEnviar.setBounds(25,400,275, 90);
         getContentPane().add(pnlEnviar);
         getContentPane().add(new JLabel());
         getContentPane().add(new JLabel());
       
-
+        ctrl.conectar(pnlConversacion, pnlEnviar);
         setResizable(false);
         setSize(320, 520);
        
