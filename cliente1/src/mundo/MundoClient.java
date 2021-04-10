@@ -49,7 +49,8 @@ public class MundoClient implements Runnable {
                 socket = server.accept();
                 inObjectBuffer = new DataInputStream(socket.getInputStream());
                 String msgr = inObjectBuffer.readUTF();
-                
+                //System.out.println(msgr);
+                ctrl.recibirMensaje(msgr);
                 //desencriptar(msgr);
                 socket.close();
 

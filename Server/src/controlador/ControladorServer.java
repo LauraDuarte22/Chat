@@ -29,6 +29,6 @@ public class ControladorServer {
     }
 
     public void toReceive(String msgReceive) {
-        pnlConversacion.mostrarMensaje(msgReceive);
+        pnlConversacion.mostrarMensaje("Cliente 1: " +msgReceive);
     }
 }

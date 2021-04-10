@@ -28,6 +28,10 @@ public class ControladorClient {
     public void conectar(PanelConversacion pnlConversacion, PanelEnviar pnlEnviar) {
         this.pnlConversacion = pnlConversacion;
         this.pnlEnviar = pnlEnviar;
+        
+    }
+    public void recibirMensaje(String msg){
+        pnlConversacion.mostrarMensaje("Server: "+msg);
     }
 
     public void enviarMensaje(String msg){
