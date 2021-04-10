@@ -27,14 +27,14 @@ public class PanelConversacion extends JPanel {
         setLayout(new FlowLayout(FlowLayout.LEFT));
 
         textfield = new JTextArea();;
-        textfield.setEnabled(false);
+        textfield.setEditable(false);
         textfield.setBounds(1, 20, 240, 260);
-        textfield.setForeground(Color.RED);
+        textfield.setForeground(Color.BLACK);
 
         //Font
         Font font = new Font("Serif", Font.PLAIN, 15);
 
-        border = BorderFactory.createTitledBorder(border, "Convesación encriptada", TitledBorder.CENTER, 
+        border = BorderFactory.createTitledBorder(border, "Conversación encriptada", TitledBorder.CENTER, 
                 TitledBorder.BELOW_TOP, font, Color.BLACK);
 
         setBorder(border);
